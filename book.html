@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="style.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="topnav">
+        <div class="logo-container">
+            <a class="logo-link" href="index.html">
+                <img class="logo" src="images/logo.png">
+            </a>
+        </div>
+        <div class="link-container">
+            <a class="topnav-link btn btn-primary" style="background-color:#d7111e; border-color:#d7111e" href="book.html">Prendre Rendez-vous</a>
+            <a class="topnav-link" href="contact.html">Contact</a>
+            <a class="topnav-link" href="about.html">À propos</a>
+            <a class="topnav-link" href="services.html">Services</a>
+        </div>
+    </div>
+
+    <div style="margin:45px auto; width:50%; text-align:center">
+        <h3>Entrez vos informations</h3>
+    </div>
+
+    <form style="margin:25px auto; width:75%" onsubmit="Submit();return false">
+        <div class="mb-3">
+            <label for="nom" class="form-label">Nom Complet</label>
+            <input type="text" class="form-control" id="nom" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="addresseEmail" class="form-label">Addresse Courriel</label>
+            <input type="email" class="form-control" id="addresseEmail" aria-describedby="emailHelp" required>
+        </div>
+
+        <label for="services" class="form-label" style="margin-top:15px">Selectionnez les services</label>
+        <div id="services" style="display:flex; flex-direction:row">
+            <div>
+                <div>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" name="flexCheckDefault1">
+                    <label class="form-check-label" for="flexCheckDefault1">
+                        Réparation du système de vitesse et de freinage
+                    </label>
+                </div>
+                <div>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2" name="flexCheckDefault2">
+                    <label class="form-check-label" for="flexCheckDefault2">
+                        Nettoyage et huilage de la chaîne
+                    </label>
+                </div>
+                <div>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3" name="flexCheckDefault3">
+                    <label class="form-check-label" for="flexCheckDefault3">
+                        Gonflage des pneus
+                    </label>
+                </div>
+                <div>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4" name="flexCheckDefault4">
+                    <label class="form-check-label" for="flexCheckDefault4">
+                        Vérification de l'usure des composants
+                    </label>
+                </div>
+            </div>
+
+            <div style="margin-left:30px">
+                <div>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5" name="flexCheckDefault5">
+                    <label class="form-check-label" for="flexCheckDefault5">
+                        Vérification et serrage des assemblages et des boulons
+                    </label>
+                </div>
+                <div>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6" name="flexCheckDefault6">
+                    <label class="form-check-label" for="flexCheckDefault6">
+                        Essuyage du cadre
+                    </label>
+                </div>
+                <div>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault7" name="flexCheckDefault7">
+                    <label class="form-check-label" for="flexCheckDefault7">
+                        Assemblage d'un nouveau vélo
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <label for="expert" class="form-label" style="margin-top: 25px">Expert</label>
+        <select class="form-select" id="expert">
+            <option value="1">Robert Dubois</option>
+            <option value="2">Cécile Bonnet</option>
+            <option value="3">Karim Abdel</option>
+        </select>
+
+        <div style="display:flex; flex-direction:row; margin-top:25px">
+            <div>
+                <label for="bookingDate">Date</label>
+                <input type="date" id="bookingDate" name="bookingDate" required>
+            </div>
+            <div style="margin-left:25px">
+                <label for="bookingTime">Heure</label>
+                <input type="time" id="bookingTime" name="bookingTime" required>
+            </div>
+        </div>
+
+        <div style="margin-top:25px; display:flex; flex-direction:row; justify-content:center">
+            <button type="submit" class="btn btn-primary">Confirmer</button>
+        </div>
+    </form>
+
+
+
+
+    <div style="height:200px">
+    </div>
+
+    <footer style="background-color:#212121">
+        <div class="py-4">
+            <div class="container text-center">
+                <p class="mb-0 py-2" style="color:#8e8e8e">© Copyright 2022 Velo Experts. Tout droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        function Submit() {
+
+            cb1 = document.getElementsByName('flexCheckDefault1')[0];
+            cb2 = document.getElementsByName('flexCheckDefault2')[0];
+            cb3 = document.getElementsByName('flexCheckDefault3')[0];
+            cb4 = document.getElementsByName('flexCheckDefault4')[0];
+            cb5 = document.getElementsByName('flexCheckDefault5')[0];
+            cb6 = document.getElementsByName('flexCheckDefault6')[0];
+            cb7 = document.getElementsByName('flexCheckDefault7')[0];
+
+            if (!cb1.checked && !cb2.checked && !cb3.checked && !cb4.checked && !cb5.checked && !cb6.checked && !cb7.checked) {
+                alert("Veuillez sélectionner au moins un service");
+            }
+            else {
+                window.open("booked.html", "_self")
+            }
+        }
+    </script>
+</body>
+</html>
